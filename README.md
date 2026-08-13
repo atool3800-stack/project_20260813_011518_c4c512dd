@@ -26,24 +26,26 @@ To guarantee **transparency and traceability**, an automated pipeline runs
 <!-- QUALITY_REPORT:START -->
 ## Data Quality Status
 
-![Quality](https://img.shields.io/badge/data%20quality-PASSING-brightgreen)
+&#9888;&#65039; ![Quality](https://img.shields.io/badge/data%20quality-DEGRADED-orange)
 
-**Status:** PASSING
+**Status:** &#9888;&#65039; DEGRADED - see CHANGELOG
 
-**Last check:** 2026-08-13 03:06:40
+**Last check:** 2026-08-13 03:07:28
 
 **Records checked:** 10,500
 
 
 | Metric | Value |
 |--------|------:|
-| Completeness | 99.85% |
-| Validity | 98.39% |
-| Consistency | 99.49% |
-| Duplicate rate | 0.37% |
-| Timestamp anomaly | 0.98% |
+| Completeness | 98.34% |
+| Validity | 78.45% |
+| Consistency | 86.46% |
+| Duplicate rate | 0.12% |
+| Timestamp anomaly | 10.99% |
 
-*Full report: [reports/quality_report_20260813_030640.md](reports/quality_report_20260813_030640.md)*
+**Degraded metrics:** validity, consistency, timestamp anomaly
+
+*Full report: [reports/quality_report_20260813_030728.md](reports/quality_report_20260813_030728.md)*
 <!-- QUALITY_REPORT:END -->
 
 ---
