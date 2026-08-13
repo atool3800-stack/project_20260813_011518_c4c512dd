@@ -1,0 +1,42 @@
+name: Hourly Quality Sync
+
+on:
+  schedule:
+    # Every hour at minute 0 (UTC)
+    - cron: "0 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  sync-quality-report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run hourly quality sync
+        run: |
+          python3 scripts/quality_check.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "Academic Researcher"
+          git config user.email "test_user_c4c512dd@example.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(quality): hourly data quality report sync"
+            git push origin main
+          else
+            echo "No changes to commit."
+          fi

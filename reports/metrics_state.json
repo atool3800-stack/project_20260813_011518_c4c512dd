@@ -1,0 +1,9 @@
+{
+  "record_count": 10500,
+  "completeness": 99.85,
+  "validity": 98.39,
+  "consistency": 99.49,
+  "duplicate_rate": 0.37,
+  "timestamp_anomaly": 0.98,
+  "generated_at": "2026-08-13T03:06:40"
+}
